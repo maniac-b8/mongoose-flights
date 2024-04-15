@@ -19,9 +19,9 @@ const flightSchema = new mongoose.Schema({
     
     },
     departs: {
-		type: Date,
+        type: Date,
         required: true,
-		default: () => new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+        default: () => new Date(new Date().setFullYear(new Date().getFullYear() + 1))
     }
     });
 
