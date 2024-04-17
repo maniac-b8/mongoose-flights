@@ -21,7 +21,7 @@
         </select>
         </label><br>
         <Label>Arrival:
-            <input type="date" name="arrival">
+            <input type="datetime-local" name="arrival">
         </Label><br>
         <button type="submit">Add Destination</button>
         </form>
@@ -44,5 +44,13 @@
                 </tbody>
             </table>
         <% } %>
-          
+        <h2 class="section-title">Tickets</h2>
+        <ul class="ticket-list">
+            <% tickets.forEach(ticket => { %>
+                <li class="ticket-item">
+                    Seat: <%= ticket.seat %>, Price: <%= ticket.price %>
+                </li>
+                </ul> 
+            <% }) %>  
+           <a href="/flights/<%= flight._id %>/tickets/new"><button>Create a new ticket</button></a>              
   <%- include('../partials/footer') %>
