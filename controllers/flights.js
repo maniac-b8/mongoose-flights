@@ -17,7 +17,10 @@ async function show(req, res) {
     res.render('flights/show', { title: 'Flight Detail', flight });
   }
 
-async function create(req, res) {
+  async function create(req, res) {
+    for (const key in req.body) {
+      if (req.body[key] === '') delete req.body[key];
+    }
     try {
         await Flight.create(req.body);
         res.redirect('/flights');
